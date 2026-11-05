@@ -3,7 +3,7 @@
     --primary: #2B1873;
     --secondary: #cad9f8;
     --text-main: #334155;
-    --highlight: #882000;
+    --highlight: #aa0000;
 }
 
 body {
@@ -24,10 +24,11 @@ main {
 }
 
 header {
-    background-color: #172f4d;
+    background-color: #23446d;
     border-radius: 0.8rem;
     margin: 0 0 1.5rem 0;
     padding: 1.2rem 1.5rem;
+    box-shadow: 0 8px 24px #dfdede;
 }
 
 header h1 {
@@ -35,12 +36,14 @@ header h1 {
     margin-bottom: 0.8rem;
 }
 
-section {
+section:not(.info-grid) {
     margin-top: 2rem;
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 2rem;
 }
 
 h1 {
-    color: #ffffff;
+    color: #edf3fd;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -48,6 +51,14 @@ h2 {
     color: var(--primary);
     font-size: 1.35rem;
     margin-bottom: 0.6rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-top: 3rem;
 }
 
 .info-grid {
@@ -61,6 +72,13 @@ h2 {
     color: var(--primary);
     border-radius: 12px;
     padding: 0.5rem 0.8rem;
+    box-shadow: 0 8px 24px #dfdede;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 10px #cccbcb;
 }
 
 .info h3 {
@@ -85,13 +103,49 @@ h2 {
     padding: 0.5rem 0.5rem;
 }
 
+#github {
+    background-color: var(--primary); 
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.75rem 1.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 3px 5px -1px #989999;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+#github:hover {
+    filter: brightness(1.25);
+    box-shadow: 0 5px 10px -1px #292929;
+}
+
+#github:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px -1px #292929;
+}
+
 /* Mobilanpassning */
-@media (max-width: 650px) {
+@media (max-width: 500px) {
     main {
         padding: 1.5rem;
     }
     
     h1 {
         font-size: 1.6rem;
+    }
+
+    .info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .info {
+        
     }
 }
